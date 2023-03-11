@@ -6,6 +6,7 @@ import 'package:my_flutter_gallery/pages/packages.dart';
 import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
+import 'package:my_flutter_gallery/pages/widgets/opacity_widget.dart';
 
 import 'components/scaffold_with_bottom_nav_bar.dart';
 
@@ -50,6 +51,8 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           GoRoute(
               path: 'layout-builder',
               builder: (context, state) => const LayoutWidgetExample()),
+          GoRoute(
+              path: 'opacity', builder: (context, state) => const OpacityWidget()),
         ],
       ),
       GoRoute(

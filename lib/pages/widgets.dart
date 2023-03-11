@@ -14,8 +14,9 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
 
     List<AccordionSection> sections = [
-      buildAccordionSection(title: "Media", accordionItems: mediaExamples),
+      buildAccordionSection(title: "Displays", accordionItems: displayExamples),
       buildAccordionSection(title: "Layouts", accordionItems: layoutExamples),
+      buildAccordionSection(title: "Media", accordionItems: mediaExamples),
     ];
 
     return Accordion(maxOpenSections: 1, children: sections);
@@ -41,4 +42,8 @@ List<Map<String, String>> mediaExamples = [
 
 List<Map<String, String>> layoutExamples = [
   {'title' : 'Layout Builder', 'path' : '/widgets/layout-builder'},
+];
+
+List<Map<String, String>> displayExamples = [
+  {'title' : 'Opacity Widget', 'path' : '/widgets/opacity'},
 ];
