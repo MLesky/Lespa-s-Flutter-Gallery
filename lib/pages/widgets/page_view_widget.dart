@@ -8,25 +8,26 @@ class PageViewWidgetExample extends StatefulWidget {
 }
 
 class _PageViewWidgetExampleState extends State<PageViewWidgetExample> {
+  int currentTap = 0;
+
+  void updateIndex(int index){setState(() => currentTap = index);}
+
+  List pageScreens = [
+    PageView(
+      controller: PageController(initialPage: 0),
+      scrollDirection: Axis.vertical,
+      children: screens,
+    ),
+
+    PageView(
+      controller: PageController(initialPage: 0),
+      scrollDirection: Axis.horizontal,
+      children: screens,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context){
-    int currentTap = 0;
-
-    void updateIndex(int index){setState(() => currentTap = index);}
-
-    List pageScreens = [
-      PageView(
-        controller: PageController(initialPage: 0),
-        scrollDirection: Axis.vertical,
-        children: screens,
-      ),
-
-      PageView(
-        controller: PageController(initialPage: 0),
-        scrollDirection: Axis.horizontal,
-        children: screens,
-      ),
-    ];
 
     return Scaffold(
       body: pageScreens[currentTap],

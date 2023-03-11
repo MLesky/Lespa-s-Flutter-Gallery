@@ -7,7 +7,8 @@ import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
 import 'package:my_flutter_gallery/pages/widgets/opacity_widget.dart';
-import 'package:my_flutter_gallery/pages/widgets/pageview_widget.dart';
+import 'package:my_flutter_gallery/pages/widgets/page_view_widget.dart';
+import 'package:my_flutter_gallery/pages/widgets/table_widget.dart';
 
 import 'components/scaffold_with_bottom_nav_bar.dart';
 
@@ -53,9 +54,14 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
               path: 'layout-builder',
               builder: (context, state) => const LayoutWidgetExample()),
           GoRoute(
-              path: 'opacity', builder: (context, state) => const OpacityWidget()),
+              path: 'opacity',
+              builder: (context, state) => const OpacityWidgetExample()),
           GoRoute(
-              path: 'pageview', builder: (context, state) => const PageViewWidgetExample()),
+              path: 'page-view',
+              builder: (context, state) => const PageViewWidgetExample()),
+          GoRoute(
+              path: 'table',
+              builder: (context, state) => const TableWidgetExample()),
         ],
       ),
       GoRoute(

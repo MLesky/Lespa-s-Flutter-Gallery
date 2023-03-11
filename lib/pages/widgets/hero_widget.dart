@@ -15,10 +15,10 @@ class HeroWidgetExample extends StatelessWidget {
             width: 150,
             height: 100,
             child: MaterialButton(
-              child: Hero(tag: 'pic',
+              child: Hero(tag: 'pic1',
               child: Image.asset('assets/images/pic1.jpg')),
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HeroWidgetScreen(image: 'assets/images/pic1.jpg', caption: capText)));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HeroWidgetScreen(image: 'assets/images/pic1.jpg', caption: capText, tag: 'pic1')));
               },
             ),
           ),
@@ -27,10 +27,10 @@ class HeroWidgetExample extends StatelessWidget {
             width: 150,
             height: 100,
             child: MaterialButton(
-              child: Hero(tag: 'pic',
+              child: Hero(tag: 'mypic',
               child: Image.asset('assets/images/mypic.jpg')),
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HeroWidgetScreen(image: 'assets/images/mypic.jpg', caption: capText)));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HeroWidgetScreen(image: 'assets/images/mypic.jpg', caption: capText, tag: 'mypic')));
               },
             ),
           ),
@@ -42,9 +42,10 @@ class HeroWidgetExample extends StatelessWidget {
 }
 
 class HeroWidgetScreen extends StatelessWidget {
-  const HeroWidgetScreen({super.key, required this.image, this.caption = ''});
+  const HeroWidgetScreen({super.key, required this.image, this.caption = '', required this.tag});
   final String image;
   final String caption;
+  final dynamic tag;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +56,7 @@ class HeroWidgetScreen extends StatelessWidget {
           padding: const EdgeInsets.all(50.0),
           child: Column(
             children: [
-              Expanded(child: Hero(tag: 'pic',
+              Expanded(child: Hero(tag: tag,
               child: Image.asset(image))),
               const SizedBox(height: 20.0,),
               Text(caption, textAlign: TextAlign.center,),
