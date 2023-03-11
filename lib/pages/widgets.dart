@@ -42,6 +42,7 @@ List<Map<String, String>> mediaExamples = [
 
 List<Map<String, String>> layoutExamples = [
   {'title' : 'Layout Builder', 'path' : '/widgets/layout-builder'},
+  {'title' : 'Page View', 'path' : '/widgets/pageview'},
 ];
 
 List<Map<String, String>> displayExamples = [
