@@ -5,6 +5,7 @@ import 'package:my_flutter_gallery/pages/widgets.dart';
 import 'package:my_flutter_gallery/pages/packages.dart';
 import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
+import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
 
 import 'components/scaffold_with_bottom_nav_bar.dart';
 
@@ -30,19 +31,38 @@ class MyApp extends StatelessWidget {
 
 GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
   ShellRoute(
-      routes: [GoRoute(
-          path: '/widgets', name: 'widget', builder: (context, state) => const HomeScreen(),
-          routes: [
-            GoRoute(path: 'fade-in-image', builder: (context, state) => const FadeInImageExample()),
-            GoRoute(path: 'hero', builder: (context, state) => const HeroWidgetExample()),
-          ],
+    routes: [
+      GoRoute(
+          path: '/',
+          name: 'home',
+          builder: (context, state) => const HomeScreen()),
+      GoRoute(
+        path: '/widgets',
+        name: 'widget',
+        builder: (context, state) => const HomeScreen(),
+        routes: [
+          GoRoute(
+              path: 'fade-in-image',
+              builder: (context, state) => const FadeInImageExample()),
+          GoRoute(
+              path: 'hero',
+              builder: (context, state) => const HeroWidgetExample()),
+          GoRoute(
+              path: 'layout-builder',
+              builder: (context, state) => const LayoutWidgetExample()),
+        ],
       ),
-        GoRoute(
-            path: '/packages', name: 'package', builder: (context, state) => const PackagesScreen()),
-        GoRoute(
-            path: '/animations', name: 'animation', builder: (context, state) => const AnimationScreen())
-      ],
-    builder: (context, state, child) => ScaffoldWithBottomNavBar(child: child,),
+      GoRoute(
+          path: '/packages',
+          name: 'package',
+          builder: (context, state) => const PackagesScreen()),
+      GoRoute(
+          path: '/animations',
+          name: 'animation',
+          builder: (context, state) => const AnimationScreen())
+    ],
+    builder: (context, state, child) => ScaffoldWithBottomNavBar(
+      child: child,
+    ),
   )
-
 ]);

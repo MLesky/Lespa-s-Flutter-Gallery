@@ -12,13 +12,10 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    List<Map<String, String>> mediaExamples = [
-      {'title' : 'Fade In Image', 'path' : '/widgets/fade-in-image'},
-      {'title' : 'Hero Widget', 'path' : '/widgets/hero'},
-    ];
 
     List<AccordionSection> sections = [
       buildAccordionSection(title: "Media", accordionItems: mediaExamples),
+      buildAccordionSection(title: "Layouts", accordionItems: layoutExamples),
     ];
 
     return Accordion(maxOpenSections: 1, children: sections);
@@ -36,3 +33,12 @@ class _HomeScreenState extends State<HomeScreen> {
     ));
   }
 }
+
+List<Map<String, String>> mediaExamples = [
+  {'title' : 'Fade In Image', 'path' : '/widgets/fade-in-image'},
+  {'title' : 'Hero Widget', 'path' : '/widgets/hero'},
+];
+
+List<Map<String, String>> layoutExamples = [
+  {'title' : 'Layout Builder', 'path' : '/widgets/layout-builder'},
+];
