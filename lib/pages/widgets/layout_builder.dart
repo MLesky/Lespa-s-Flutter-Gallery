@@ -32,7 +32,7 @@ class LayoutWidgetExample extends StatelessWidget {
     });
   }
 
-  Container buildSquareBox(dynamic item) => Container(width: 230.0, height: 180.0, color: Colors.indigo, margin: const EdgeInsets.symmetric(vertical: 20.0), child: Center(child: Text('$item', textScaleFactor: 2.0, style: const TextStyle(color: Colors.white)),));
+  Container buildSquareBox(dynamic item) => Container(width: 230.0, height: 280.0, color: Colors.indigo, margin: const EdgeInsets.symmetric(vertical: 20.0), child: Center(child: Text('$item', textScaleFactor: 2.0, style: const TextStyle(color: Colors.white)),));
 
   Widget buildOneColumn({List items = const []}) {
     return Column(
