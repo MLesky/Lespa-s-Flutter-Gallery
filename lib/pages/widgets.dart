@@ -65,6 +65,7 @@ List<Map<String, String>> layoutExamples = [
 List<Map<String, String>> displayExamples = [
   {'title': 'Opacity Widget', 'path': '/widgets/opacity'},
   {'title': 'About Dialog', 'path': '/widgets/about-dialog'},
+  {'title': 'Alert Dialog', 'path': '/widgets/alert-dialog'},
 ];
 
 List<Map<String, String>> eventExamples = [

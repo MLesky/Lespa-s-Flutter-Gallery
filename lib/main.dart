@@ -5,6 +5,7 @@ import 'package:my_flutter_gallery/pages/widgets.dart';
 import 'package:my_flutter_gallery/pages/packages.dart';
 import 'package:my_flutter_gallery/pages/widgets/about_dialog.dart';
 import 'package:my_flutter_gallery/pages/widgets/absorb_pointer.dart';
+import 'package:my_flutter_gallery/pages/widgets/alert_dialog.dart';
 import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
@@ -71,6 +72,8 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
               builder: (context, state) => const AboutDialogExample()),
           GoRoute(path: 'absorb-pointer',
               builder: (context, state) => const AbsorbPointerExample()),
+          GoRoute(path: 'alert-dialog',
+              builder: (context, state) => const AlertDialogExample()),
         ],
       ),
       GoRoute(
