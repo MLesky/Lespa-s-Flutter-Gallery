@@ -23,9 +23,10 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
 
   @override
   Widget build(BuildContext context) {
+    String location = (GoRouter.of(context).location);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Lespa\'s Flutter Gallery'),
+        title: Text('Lespa\'s Flutter Gallery - ${location.substring(location.lastIndexOf('/')+1).toUpperCase()}', textScaleFactor: 0.8,),
       ),
       body: widget.child,
       bottomNavigationBar: BottomNavigationBar(

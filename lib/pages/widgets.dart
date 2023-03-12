@@ -16,6 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
       buildAccordionSection(title: "Displays", accordionItems: displayExamples),
       buildAccordionSection(title: "Layouts", accordionItems: layoutExamples),
       buildAccordionSection(title: "Media", accordionItems: mediaExamples),
+      buildAccordionSection(title: 'Events', accordionItems: eventExamples),
     ];
 
     return Accordion(
@@ -65,3 +66,8 @@ List<Map<String, String>> displayExamples = [
   {'title': 'Opacity Widget', 'path': '/widgets/opacity'},
   {'title': 'About Dialog', 'path': '/widgets/about-dialog'},
 ];
+
+List<Map<String, String>> eventExamples = [
+  {'title': 'Absorb Pointer', 'path': '/widgets/absorb-pointer'},
+];
+
