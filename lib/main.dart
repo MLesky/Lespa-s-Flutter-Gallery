@@ -9,6 +9,7 @@ import 'package:my_flutter_gallery/pages/widgets/alert_dialog.dart';
 import 'package:my_flutter_gallery/pages/widgets/align_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/animated_container.dart';
 import 'package:my_flutter_gallery/pages/widgets/animated_crossfade.dart';
+import 'package:my_flutter_gallery/pages/widgets/animated_opacity.dart';
 import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
@@ -87,6 +88,14 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           GoRoute(
               path: 'animated-container',
               builder: (context, state) => const AnimatedContainerExample()),
+          GoRoute(
+            path: 'cross-fade',
+            builder: (context, state) => const AnimatedCrossFadeExample(),
+          ),
+          GoRoute(
+            path: 'animated-opacity',
+            builder: (context, state) => const AnimatedOpacityExample(),
+          )
         ],
       ),
       GoRoute(
@@ -97,10 +106,6 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           path: '/animations',
           name: 'animation',
           builder: (context, state) => const AnimationScreen()),
-      GoRoute(
-        path: '/widgets/cross-fade',
-        builder: (context, state) => const AnimatedCrossFadeExample(),
-      )
     ],
     builder: (context, state, child) => ScaffoldWithBottomNavBar(
       child: child,
