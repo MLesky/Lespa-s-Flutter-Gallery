@@ -78,4 +78,5 @@ List<Map<String, String>> animatedExamples = [
   {'title': 'Animated Opacity', 'path' : '/widgets/animated-opacity'},
   {'title': 'Animated Cross Fade', 'path' : '/widgets/cross-fade'},
   {'title': 'Animated Container', 'path' : '/widgets/animated-container'},
+  {'title': 'Animated Padding', 'path' : '/widgets/animated-padding'},
 ];
