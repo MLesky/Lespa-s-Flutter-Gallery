@@ -11,6 +11,7 @@ import 'package:my_flutter_gallery/pages/widgets/animated_container.dart';
 import 'package:my_flutter_gallery/pages/widgets/animated_crossfade.dart';
 import 'package:my_flutter_gallery/pages/widgets/animated_opacity.dart';
 import 'package:my_flutter_gallery/pages/widgets/animated_padding.dart';
+import 'package:my_flutter_gallery/pages/widgets/animated_position.dart';
 import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
@@ -100,6 +101,10 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           GoRoute(
             path: 'animated-padding',
             builder: (context, state) => const AnimatedPaddingExample(),
+          ),
+          GoRoute(
+            path: 'animated-positioned',
+            builder: (context, state) => const AnimatedPositionedExample(),
           )
         ],
       ),
