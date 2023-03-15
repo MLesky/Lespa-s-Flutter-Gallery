@@ -1,6 +1,6 @@
 import 'package:accordion/accordion.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import '../components/widget_builds.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -13,11 +13,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     List<AccordionSection> sections = [
-      buildAccordionSection(title: "Displays", accordionItems: displayExamples),
-      buildAccordionSection(title: "Layouts", accordionItems: layoutExamples),
-      buildAccordionSection(title: 'Animated Widgets', accordionItems: animatedExamples),
-      buildAccordionSection(title: "Media", accordionItems: mediaExamples),
-      buildAccordionSection(title: 'Events', accordionItems: eventExamples),
+      buildAccordionSection(context, title: "Displays", accordionItems: displayExamples),
+      buildAccordionSection(context, title: "Layouts", accordionItems: layoutExamples),
+      buildAccordionSection(context, title: 'Animated Widgets', accordionItems: animatedExamples),
+      buildAccordionSection(context, title: "Media", accordionItems: mediaExamples),
+      buildAccordionSection(context, title: 'Events', accordionItems: eventExamples),
     ];
 
     return Accordion(
@@ -26,28 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
       headerPadding: const EdgeInsets.all(20),
       children: sections,
     );
-  }
-
-  AccordionSection buildAccordionSection(
-      {required String title, required List accordionItems}) {
-    return AccordionSection(
-        header: Text(title,
-            style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-                fontSize: 16.0)),
-        content: Column(
-            children: accordionItems
-                .map((accordionItem) => Card(
-                        color: Colors.white70,
-                        elevation: 2.0,
-                        child: ListTile(
-                      title: Text(accordionItem['title'], style: const TextStyle(color: Colors.indigo),),
-                      onTap: () {
-                        context.push(accordionItem['path']);
-                      },
-                    )))
-                .toList()));
   }
 }
 
