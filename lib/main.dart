@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_flutter_gallery/pages/animation.dart';
+import 'package:my_flutter_gallery/pages/packages/video_player_package.dart';
 import 'package:my_flutter_gallery/pages/widgets.dart';
 import 'package:my_flutter_gallery/pages/packages.dart';
 import 'package:my_flutter_gallery/pages/widgets/about_dialog.dart';
@@ -111,7 +112,11 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
       GoRoute(
           path: '/packages',
           name: 'package',
-          builder: (context, state) => const PackagesScreen()),
+          builder: (context, state) => const PackagesScreen(),
+          routes: [
+            GoRoute(path: 'video-player', builder: (context, state) => const VideoPlayerExample())
+          ]
+      ),
       GoRoute(
           path: '/animations',
           name: 'animation',

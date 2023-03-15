@@ -39,6 +39,7 @@ dependencies:
   go_router: ^6.2.0
   accordion: ^2.5.1
   syncfusion_flutter_sliders: ^20.4.53
+  video_player: ^2.6.0
 
 dev_dependencies:
   flutter_test:
@@ -65,6 +66,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/images/
+    - assets/videos/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
