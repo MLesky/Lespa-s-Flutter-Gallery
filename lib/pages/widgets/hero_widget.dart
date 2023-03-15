@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 String capText = 'The hero widget Animates this image when changing screens. Other widgets (Not only images) can be used as heroes';
 
@@ -49,9 +50,7 @@ class HeroWidgetScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: const Text("Hero Widget")),
-      body: Center(
+    return Center(
         child: Padding(
           padding: const EdgeInsets.all(50.0),
           child: Column(
@@ -60,10 +59,10 @@ class HeroWidgetScreen extends StatelessWidget {
               child: Image.asset(image))),
               const SizedBox(height: 20.0,),
               Text(caption, textAlign: TextAlign.center,),
+              TextButton.icon(onPressed: (){context.pop();}, icon: const Icon(Icons.arrow_back_outlined), label: const Text('Back'))
             ],
           ),
         ),
-      ),
     );
   }
 
