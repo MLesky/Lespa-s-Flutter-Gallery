@@ -40,6 +40,24 @@ dependencies:
   accordion: ^2.5.1
   syncfusion_flutter_sliders: ^20.4.53
   video_player: ^2.6.0
+  youtube_player_iframe: ^4.0.4
+  flutter_spinkit: ^5.1.0
+  image_picker: ^0.8.7
+  file_picker: ^5.2.6
+  font_awesome_flutter: ^10.4.0
+  camera: ^0.10.3+2
+  page_transition: ^2.0.9
+  animated_text_kit: ^4.2.2
+  youtube_player_flutter: ^8.1.2
+  image_gallery_saver: ^1.7.1
+  badges: ^3.0.2
+  connectivity_plus: ^3.0.3
+  flutter_rating_bar: ^4.0.1
+  flutter_slidable: ^2.0.0
+  google_fonts: ^4.0.3
+  url_launcher: ^6.1.10
+  flutter_widget_from_html: ^0.10.0
+  flutter_html: ^3.0.0-alpha.6
 
 dev_dependencies:
   flutter_test:

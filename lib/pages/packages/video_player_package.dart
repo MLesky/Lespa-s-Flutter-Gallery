@@ -1,10 +1,12 @@
-import 'package:flutter/cupertino.dart';
+import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 import 'package:video_player/video_player.dart';
 
 class VideoPlayerExample extends StatefulWidget {
-  const VideoPlayerExample({super.key});
+  final String link;
+  final bool fromFile;
+  const VideoPlayerExample({super.key, required this.link, this.fromFile = false});
 
   @override
   State<VideoPlayerExample> createState() => _VideoPlayerExampleState();
@@ -16,8 +18,11 @@ class _VideoPlayerExampleState extends State<VideoPlayerExample> {
   @override
   void initState() {
     super.initState();
+    !widget.fromFile ?
     _assetController =
-        VideoPlayerController.asset('assets/videos/bouncing_ball.mp4');
+        VideoPlayerController.asset(widget.link) : _assetController =
+        VideoPlayerController.file(File(widget.link));
+    ;
     _assetController.addListener(() {
       setState(() {});
     });
@@ -36,7 +41,7 @@ class _VideoPlayerExampleState extends State<VideoPlayerExample> {
 
   @override
   Widget build(BuildContext context) => Center(
-        child: ListView(
+        child: Column(
           children: [
             const SizedBox(
               height: 20,
@@ -50,15 +55,11 @@ class _VideoPlayerExampleState extends State<VideoPlayerExample> {
               height: 10,
             ),
             AspectRatio(
-              aspectRatio: 3 / 2,
+              aspectRatio: _assetController.value.aspectRatio,
               child: Stack(alignment: Alignment.bottomCenter, children: [
                 VideoPlayer(_assetController),
                 _ControlsOverlay(controller: _assetController),
               ]),
-            ),
-            TextButton(
-              onPressed: () => _assetController.setVolume(0.4),
-              child: Text('${_assetController.value.volume}'),
             ),
           ],
         ),

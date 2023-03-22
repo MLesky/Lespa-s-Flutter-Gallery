@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_flutter_gallery/pages/animation.dart';
+import 'package:my_flutter_gallery/pages/packages/flutter_spinkit_package.dart';
+import 'package:my_flutter_gallery/pages/packages/image_picker_package.dart';
 import 'package:my_flutter_gallery/pages/packages/video_player_package.dart';
+import 'package:my_flutter_gallery/pages/packages/youtube_player_iframe.dart';
 import 'package:my_flutter_gallery/pages/widgets.dart';
 import 'package:my_flutter_gallery/pages/packages.dart';
 import 'package:my_flutter_gallery/pages/widgets/about_dialog.dart';
@@ -114,7 +117,10 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           name: 'package',
           builder: (context, state) => const PackagesScreen(),
           routes: [
-            GoRoute(path: 'video-player', builder: (context, state) => const VideoPlayerExample())
+            GoRoute(path: 'video-player', builder: (context, state) => const VideoPlayerExample(link: 'assets/videos/bouncing_ball.mp4',)),
+            GoRoute(path: 'youtube-player-iframe', builder: (context, state) => const YouTubePlayerIframeExample(),),
+            GoRoute(path: 'image-picker', builder: (context, state) => const ImagePickerExample(),),
+            GoRoute(path: 'flutter_spinkit', builder: (context, state) => const FlutterSpinkitExample(),)
           ]
       ),
       GoRoute(
