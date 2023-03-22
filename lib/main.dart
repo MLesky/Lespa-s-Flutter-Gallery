@@ -17,6 +17,7 @@ import 'package:my_flutter_gallery/pages/widgets/animated_opacity.dart';
 import 'package:my_flutter_gallery/pages/widgets/animated_padding.dart';
 import 'package:my_flutter_gallery/pages/widgets/animated_position.dart';
 import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
+import 'package:my_flutter_gallery/pages/widgets/flutter_buttons.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
 import 'package:my_flutter_gallery/pages/widgets/opacity_widget.dart';
@@ -58,6 +59,9 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
         name: 'widget',
         builder: (context, state) => const HomeScreen(),
         routes: [
+          GoRoute(
+              path: 'flutter-buttons',
+              builder: (context, state) => const FlutterButtonsExample()),
           GoRoute(
               path: 'fade-in-image',
               builder: (context, state) => const FadeInImageExample()),

@@ -13,6 +13,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     List<AccordionSection> sections = [
+      buildAccordionSection(context, title: "Basics", accordionItems: basicExamples),
       buildAccordionSection(context, title: "Displays", accordionItems: displayExamples),
       buildAccordionSection(context, title: "Layouts", accordionItems: layoutExamples),
       buildAccordionSection(context, title: 'Animated Widgets', accordionItems: animatedExamples),
@@ -28,6 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+List<Map<String, String>> basicExamples = [
+  {'title': 'Flutter Buttons', 'path': '/widgets/flutter-buttons'},
+];
 
 List<Map<String, String>> mediaExamples = [
   {'title': 'Fade In Image', 'path': '/widgets/fade-in-image'},
