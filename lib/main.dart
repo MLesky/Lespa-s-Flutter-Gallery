@@ -22,6 +22,7 @@ import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
 import 'package:my_flutter_gallery/pages/widgets/opacity_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/page_view_widget.dart';
+import 'package:my_flutter_gallery/pages/widgets/scaffold_appbar.dart';
 import 'package:my_flutter_gallery/pages/widgets/table_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/wrap_widget.dart';
 
@@ -113,6 +114,10 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           GoRoute(
             path: 'animated-positioned',
             builder: (context, state) => const AnimatedPositionedExample(),
+          ),
+          GoRoute(
+            path: 'scaffold-appbar',
+            builder: (context, state) => const ScaffoldAppBarExample(),
           )
         ],
       ),
