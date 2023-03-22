@@ -69,4 +69,5 @@ List<Map<String, String>> animatedExamples = [
 List<Map<String, String>> scaffoldExamples = [
   {'title': 'Scaffold AppBar', 'path': '/widgets/scaffold-appbar'},
   {'title': 'Scaffold Navigation Drawer', 'path': '/widgets/nav-drawer'},
+  {'title': 'Scaffold SnackBar', 'path': '/widgets/scaffold-snack-bar'},
 ];

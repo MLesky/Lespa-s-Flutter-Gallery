@@ -24,6 +24,7 @@ import 'package:my_flutter_gallery/pages/widgets/navigation_drawer.dart';
 import 'package:my_flutter_gallery/pages/widgets/opacity_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/page_view_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/scaffold_appbar.dart';
+import 'package:my_flutter_gallery/pages/widgets/scaffold_snackbar.dart';
 import 'package:my_flutter_gallery/pages/widgets/table_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/wrap_widget.dart';
 
@@ -123,6 +124,10 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           GoRoute(
             path: 'nav-drawer',
             builder: (context, state) => const ScaffoldNavigationDrawerExample(),
+          ),
+          GoRoute(
+            path: 'scaffold-snack-bar',
+            builder: (context, state) => const ScaffoldSnackBarExample(),
           )
         ],
       ),
