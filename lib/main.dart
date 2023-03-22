@@ -20,6 +20,7 @@ import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
 import 'package:my_flutter_gallery/pages/widgets/flutter_buttons.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
+import 'package:my_flutter_gallery/pages/widgets/navigation_drawer.dart';
 import 'package:my_flutter_gallery/pages/widgets/opacity_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/page_view_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/scaffold_appbar.dart';
@@ -118,6 +119,10 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           GoRoute(
             path: 'scaffold-appbar',
             builder: (context, state) => const ScaffoldAppBarExample(),
+          ),
+          GoRoute(
+            path: 'nav-drawer',
+            builder: (context, state) => const ScaffoldNavigationDrawerExample(),
           )
         ],
       ),

@@ -16,7 +16,7 @@ class _HomeScreenState extends State<HomeScreen> {
       buildAccordionSection(context, title: "Basics", accordionItems: basicExamples),
       buildAccordionSection(context, title: "Displays", accordionItems: displayExamples),
       buildAccordionSection(context, title: "Layouts", accordionItems: layoutExamples),
-      buildAccordionSection(context, title: 'Navigation', accordionItems: navigationExamples),
+      buildAccordionSection(context, title: 'Scaffold', accordionItems: scaffoldExamples),
       buildAccordionSection(context, title: 'Animated Widgets', accordionItems: animatedExamples),
       buildAccordionSection(context, title: "Media", accordionItems: mediaExamples),
       buildAccordionSection(context, title: 'Events', accordionItems: eventExamples),
@@ -66,6 +66,7 @@ List<Map<String, String>> animatedExamples = [
   {'title': 'Animated Positioned', 'path' : '/widgets/animated-positioned'},
 ];
 
-List<Map<String, String>> navigationExamples = [
+List<Map<String, String>> scaffoldExamples = [
   {'title': 'Scaffold AppBar', 'path': '/widgets/scaffold-appbar'},
+  {'title': 'Scaffold Navigation Drawer', 'path': '/widgets/nav-drawer'},
 ];
