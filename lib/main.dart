@@ -19,6 +19,7 @@ import 'package:my_flutter_gallery/pages/widgets/animated_position.dart';
 import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
 import 'package:my_flutter_gallery/pages/widgets/flutter_buttons.dart';
 import 'package:my_flutter_gallery/pages/widgets/flutter_tabs.dart';
+import 'package:my_flutter_gallery/pages/widgets/flutter_theme.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
 import 'package:my_flutter_gallery/pages/widgets/navigation_drawer.dart';
@@ -44,7 +45,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.indigo,
+        primarySwatch: Colors.teal,
       ),
       routerConfig: routes,
     );
@@ -133,7 +134,11 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           GoRoute(
             path: 'flutter-tabs',
             builder: (context, state) => const FlutterTabsExample(),
-          )
+          ),
+          GoRoute(
+            path: 'flutter-theme',
+            builder: (context, state) => const FlutterThemeExample(),
+          ),
         ],
       ),
       GoRoute(

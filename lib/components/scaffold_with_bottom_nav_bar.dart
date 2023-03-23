@@ -50,7 +50,7 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
         ],
         onTap: (index) => trying(context, index),
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.indigo,
+        backgroundColor: Theme.of(context).primaryColor,
         selectedItemColor: Colors.yellow,
         unselectedItemColor: Colors.white,
         selectedFontSize: 15.0,
