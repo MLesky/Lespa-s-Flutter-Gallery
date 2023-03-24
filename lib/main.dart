@@ -27,6 +27,7 @@ import 'package:my_flutter_gallery/pages/widgets/opacity_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/page_view_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/scaffold_appbar.dart';
 import 'package:my_flutter_gallery/pages/widgets/scaffold_snackbar.dart';
+import 'package:my_flutter_gallery/pages/widgets/stateful_builder.dart';
 import 'package:my_flutter_gallery/pages/widgets/table_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/wrap_widget.dart';
 
@@ -138,6 +139,10 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           GoRoute(
             path: 'flutter-theme',
             builder: (context, state) => const FlutterThemeExample(),
+          ),
+          GoRoute(
+            path: 'stateful-builder',
+            builder: (context, state) => const StateFulBuilderExample(),
           ),
         ],
       ),

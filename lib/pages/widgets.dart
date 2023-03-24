@@ -20,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
       buildAccordionSection(context, title: 'Animated Widgets', accordionItems: animatedExamples),
       buildAccordionSection(context, title: "Media", accordionItems: mediaExamples),
       buildAccordionSection(context, title: 'Events', accordionItems: eventExamples),
+      buildAccordionSection(context, title: 'Builders', accordionItems: builderExamples),
     ];
 
     return Accordion(
@@ -72,4 +73,9 @@ List<Map<String, String>> scaffoldExamples = [
   {'title': 'Scaffold SnackBar', 'path': '/widgets/scaffold-snack-bar'},
   {'title': 'Tap Bar', 'path': '/widgets/flutter-tabs'},
   {'title': 'Flutter Theme', 'path': '/widgets/flutter-theme'},
+];
+
+List<Map<String, String>> builderExamples = [
+  {'title': 'Stateful Builder', 'path': '/widgets/stateful-builder'},
+  {'title': 'Layout Builder', 'path': '/widgets/layout-builder'},
 ];
