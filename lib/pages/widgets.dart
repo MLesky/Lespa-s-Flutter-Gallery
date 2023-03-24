@@ -71,5 +71,5 @@ List<Map<String, String>> scaffoldExamples = [
   {'title': 'Scaffold Navigation Drawer', 'path': '/widgets/nav-drawer'},
   {'title': 'Scaffold SnackBar', 'path': '/widgets/scaffold-snack-bar'},
   {'title': 'Tap Bar', 'path': '/widgets/flutter-tabs'},
-  {'title': 'Flutter Theme', 'path': '/widgets/flutter-themes'},
+  {'title': 'Flutter Theme', 'path': '/widgets/flutter-theme'},
 ];
