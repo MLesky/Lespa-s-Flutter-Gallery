@@ -78,4 +78,5 @@ List<Map<String, String>> scaffoldExamples = [
 List<Map<String, String>> builderExamples = [
   {'title': 'Stateful Builder', 'path': '/widgets/stateful-builder'},
   {'title': 'Layout Builder', 'path': '/widgets/layout-builder'},
+  {'title': 'Inherited Widget', 'path': '/widgets/inherited-widget'},
 ];

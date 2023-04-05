@@ -21,6 +21,7 @@ import 'package:my_flutter_gallery/pages/widgets/flutter_buttons.dart';
 import 'package:my_flutter_gallery/pages/widgets/flutter_tabs.dart';
 import 'package:my_flutter_gallery/pages/widgets/flutter_theme.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
+import 'package:my_flutter_gallery/pages/widgets/inherited_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
 import 'package:my_flutter_gallery/pages/widgets/navigation_drawer.dart';
 import 'package:my_flutter_gallery/pages/widgets/opacity_widget.dart';
@@ -143,6 +144,10 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           GoRoute(
             path: 'stateful-builder',
             builder: (context, state) => const StateFulBuilderExample(),
+          ),
+          GoRoute(
+            path: 'inherited-widget',
+            builder: (context, state) => InheritedWidgetExample(child: const InheritedWidgetTestExample()),
           ),
         ],
       ),
