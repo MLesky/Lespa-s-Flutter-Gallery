@@ -4,7 +4,7 @@ import 'package:my_flutter_gallery/pages/animation.dart';
 import 'package:my_flutter_gallery/pages/packages/flutter_spinkit_package.dart';
 import 'package:my_flutter_gallery/pages/packages/image_picker_package.dart';
 import 'package:my_flutter_gallery/pages/packages/provider.dart';
-import 'package:my_flutter_gallery/pages/packages/provider_of_context.dart';
+import 'package:my_flutter_gallery/pages/packages/provider_read_watch_select.dart';
 import 'package:my_flutter_gallery/pages/packages/video_player_package.dart';
 import 'package:my_flutter_gallery/pages/packages/youtube_player_iframe.dart';
 import 'package:my_flutter_gallery/pages/widgets.dart';
@@ -186,8 +186,10 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
             GoRoute(
                 path: 'provider',
                 builder: (context, state) => const ProviderScreenState(),
+                routes: [
+                  GoRoute(path: 'read-watch-select', builder: (context, state) => const ProviderReadWatchAndSelect())
+                ]
                 ),
-            GoRoute(path: 'provider-read', builder: (context, state) => const ProviderRead())
           ]),
       GoRoute(
           path: '/animations',
