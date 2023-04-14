@@ -42,6 +42,7 @@ List<Map<String, String>> mediaExamples = [
 List<Map<String, String>> stateManagementExamples = [
   {'title': 'Bloc Pattern', 'path': '/packages/bloc-pattern'},
   {'title': 'Provider', 'path': '/packages/provider'},
+  {'title': 'Provider - Read', 'path': '/packages/provider-read'},
   {'title': 'Stateful Builder', 'path': '/widgets/stateful-builder'},
   {'title': 'Inherited Widget', 'path': '/widgets/inherited-widget'},
 ];

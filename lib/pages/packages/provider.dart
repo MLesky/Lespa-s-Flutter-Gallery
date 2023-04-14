@@ -50,44 +50,47 @@ class DrinksProvider extends ChangeNotifier {
       _drinks.where((element) => element.selected).toList();
 }
 
-class CheckboxProviderScreenState extends StatelessWidget {
-  const CheckboxProviderScreenState({super.key});
+class ProviderScreenState extends StatelessWidget {
+  const ProviderScreenState({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Consumer<DrinksProvider>(
-        builder: (_, drinksProvider, child) => Scaffold(
-          appBar: AppBar(
-            title: Text(drinksProvider.title),
-            bottom: TabBar(onTap: (index) {
-              drinksProvider.updateTitle(index);
-            },
-                tabs: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Text('Menu'),
-                  SizedBox(width: 15,),
-                  Icon(Icons.menu),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const Text('Others'),
-                  const SizedBox(width: 15,),
-                  Badge(label: Text('${drinksProvider.selectedDrinks.length}'), child: const Icon(Icons.shopping_cart),),
-                ],
-              ),
-            ]),
-          ),
-          body: const TabBarView(
-            children: [
-              DrinkOrders(),
-              OrdersList(),
-            ],
+    return ChangeNotifierProvider(
+      create: (_) => DrinksProvider(),
+      child: DefaultTabController(
+        length: 2,
+        child: Consumer<DrinksProvider>(
+          builder: (_, drinksProvider, child) => Scaffold(
+            appBar: AppBar(
+              title: Text(drinksProvider.title),
+              bottom: TabBar(onTap: (index) {
+                drinksProvider.updateTitle(index);
+              },
+                  tabs: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: const [
+                    Text('Menu'),
+                    SizedBox(width: 15,),
+                    Icon(Icons.menu),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('Others'),
+                    const SizedBox(width: 15,),
+                    Badge(label: Text('${drinksProvider.selectedDrinks.length}'), child: const Icon(Icons.shopping_cart),),
+                  ],
+                ),
+              ]),
+            ),
+            body: const TabBarView(
+              children: [
+                DrinkOrders(),
+                OrdersList(),
+              ],
+            ),
           ),
         ),
       ),
