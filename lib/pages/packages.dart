@@ -17,6 +17,7 @@ class _PackagesScreenState extends State<PackagesScreen> {
     List<AccordionSection> sections = [
       buildAccordionSection(context, title: "Media", accordionItems: mediaExamples),
       buildAccordionSection(context, title: 'Animated Packages', accordionItems: animatedExamples),
+      buildAccordionSection(context, title: 'State Management', accordionItems: stateManagementExamples),
     ];
 
     return Accordion(
@@ -36,4 +37,11 @@ List<Map<String, String>> mediaExamples = [
   {'title': 'Video Player', 'path': '/packages/video-player'},
   {'title': 'Youtube Player Iframe', 'path': '/packages/youtube-player-iframe'},
   {'title': 'Image and Video Picker', 'path': '/packages/image-picker'},
+];
+
+List<Map<String, String>> stateManagementExamples = [
+  {'title': 'Bloc Pattern', 'path': '/packages/bloc-pattern'},
+  {'title': 'Provider', 'path': '/packages/provider'},
+  {'title': 'Stateful Builder', 'path': '/widgets/stateful-builder'},
+  {'title': 'Inherited Widget', 'path': '/widgets/inherited-widget'},
 ];

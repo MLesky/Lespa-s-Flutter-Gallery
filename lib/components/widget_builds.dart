@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 AccordionSection buildAccordionSection(BuildContext context,
     {required String title, required List accordionItems}) {
   return AccordionSection(
+      leftIcon: const Icon(Icons.play_arrow, color: Colors.white),
       header: Text(title,
           style: const TextStyle(
               color: Colors.white,

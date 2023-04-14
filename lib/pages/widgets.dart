@@ -21,6 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
       buildAccordionSection(context, title: "Media", accordionItems: mediaExamples),
       buildAccordionSection(context, title: 'Events', accordionItems: eventExamples),
       buildAccordionSection(context, title: 'Builders', accordionItems: builderExamples),
+      buildAccordionSection(context, title: 'State management', accordionItems: stateManagementExamples),
     ];
 
     return Accordion(
@@ -78,5 +79,9 @@ List<Map<String, String>> scaffoldExamples = [
 List<Map<String, String>> builderExamples = [
   {'title': 'Stateful Builder', 'path': '/widgets/stateful-builder'},
   {'title': 'Layout Builder', 'path': '/widgets/layout-builder'},
+];
+
+List<Map<String, String>> stateManagementExamples = [
+  {'title': 'Stateful Builder', 'path': '/widgets/stateful-builder'},
   {'title': 'Inherited Widget', 'path': '/widgets/inherited-widget'},
 ];

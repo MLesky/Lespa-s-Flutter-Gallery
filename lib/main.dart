@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:my_flutter_gallery/pages/animation.dart';
 import 'package:my_flutter_gallery/pages/packages/flutter_spinkit_package.dart';
 import 'package:my_flutter_gallery/pages/packages/image_picker_package.dart';
+import 'package:my_flutter_gallery/pages/packages/provider.dart';
 import 'package:my_flutter_gallery/pages/packages/video_player_package.dart';
 import 'package:my_flutter_gallery/pages/packages/youtube_player_iframe.dart';
 import 'package:my_flutter_gallery/pages/widgets.dart';
@@ -16,6 +17,7 @@ import 'package:my_flutter_gallery/pages/widgets/animated_crossfade.dart';
 import 'package:my_flutter_gallery/pages/widgets/animated_opacity.dart';
 import 'package:my_flutter_gallery/pages/widgets/animated_padding.dart';
 import 'package:my_flutter_gallery/pages/widgets/animated_position.dart';
+import 'package:my_flutter_gallery/pages/packages/bloc_pattern.dart';
 import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
 import 'package:my_flutter_gallery/pages/widgets/flutter_buttons.dart';
 import 'package:my_flutter_gallery/pages/widgets/flutter_tabs.dart';
@@ -31,6 +33,7 @@ import 'package:my_flutter_gallery/pages/widgets/scaffold_snackbar.dart';
 import 'package:my_flutter_gallery/pages/widgets/stateful_builder.dart';
 import 'package:my_flutter_gallery/pages/widgets/table_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/wrap_widget.dart';
+import 'package:provider/provider.dart';
 
 import 'components/scaffold_with_bottom_nav_bar.dart';
 
@@ -46,6 +49,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.teal,
       ),
@@ -127,7 +131,8 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           ),
           GoRoute(
             path: 'nav-drawer',
-            builder: (context, state) => const ScaffoldNavigationDrawerExample(),
+            builder: (context, state) =>
+                const ScaffoldNavigationDrawerExample(),
           ),
           GoRoute(
             path: 'scaffold-snack-bar',
@@ -147,7 +152,8 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           ),
           GoRoute(
             path: 'inherited-widget',
-            builder: (context, state) => InheritedWidgetExample(child: const InheritedWidgetTestExample()),
+            builder: (context, state) => InheritedWidgetExample(
+                child: const InheritedWidgetTestExample()),
           ),
         ],
       ),
@@ -156,12 +162,35 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           name: 'package',
           builder: (context, state) => const PackagesScreen(),
           routes: [
-            GoRoute(path: 'video-player', builder: (context, state) => const VideoPlayerExample(link: 'assets/videos/bouncing_ball.mp4',)),
-            GoRoute(path: 'youtube-player-iframe', builder: (context, state) => const YouTubePlayerIframeExample(),),
-            GoRoute(path: 'image-picker', builder: (context, state) => const ImagePickerExample(),),
-            GoRoute(path: 'flutter_spinkit', builder: (context, state) => const FlutterSpinkitExample(),)
-          ]
-      ),
+            GoRoute(
+                path: 'video-player',
+                builder: (context, state) => const VideoPlayerExample(
+                      link: 'assets/videos/bouncing_ball.mp4',
+                    )),
+            GoRoute(
+              path: 'youtube-player-iframe',
+              builder: (context, state) => const YouTubePlayerIframeExample(),
+            ),
+            GoRoute(
+              path: 'image-picker',
+              builder: (context, state) => const ImagePickerExample(),
+            ),
+            GoRoute(
+              path: 'flutter_spinkit',
+              builder: (context, state) => const FlutterSpinkitExample(),
+            ),
+            GoRoute(
+              path: 'bloc-pattern',
+              builder: (context, state) => const BlocHome(),
+            ),
+            GoRoute(
+                path: 'provider',
+                builder: (context, state) => ChangeNotifierProvider(
+                      create: (_) => DrinksProvider(),
+                      child: const CheckboxProviderScreenState(),
+                    ),
+                ),
+          ]),
       GoRoute(
           path: '/animations',
           name: 'animation',
