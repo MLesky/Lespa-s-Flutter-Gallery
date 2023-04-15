@@ -1,23 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-enum BlocEvent { inc, dec }
-
-class BlocCounter extends Bloc<BlocEvent, int> {
+class BlocCounter extends Cubit<int> {
   BlocCounter(super.initialState);
 
   int get initialState => 0;
 
-  Stream<int> mapEventToState(BlocEvent event) async* {
-    switch (event) {
-      case BlocEvent.inc:
-        yield state + 1;
-        break;
-      case BlocEvent.dec:
-        yield state - 1;
-        break;
-    }
-  }
+  void inc() => state < 10 ? emit(state + 1) : emit(state);
+  void dec() => state > 0 ? emit(state - 1) : emit(state);
 }
 
 class BlocPatternExample extends StatelessWidget {
@@ -27,26 +17,42 @@ class BlocPatternExample extends StatelessWidget {
   Widget build(BuildContext context) {
     BlocCounter blocCount = BlocProvider.of<BlocCounter>(context);
     return Center(
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          IconButton(
-              onPressed: () {
-                blocCount.add(BlocEvent.inc);
-              },
-              icon: const Icon(Icons.add)),
-          BlocBuilder(builder: (context, state) {
-            return Text('$state');
-          }),
-          IconButton(
-              onPressed: () {
-                blocCount.add(BlocEvent.dec);
-              },
-              icon: const Icon(Icons.remove)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              IconButton(
+                  onPressed: () {
+                    blocCount.inc();
+                  },
+                  icon: const Icon(Icons.add)),
+              BlocBuilder<BlocCounter, int>(builder: (context, state) {
+                return Text('$state');
+              }),
+              IconButton(
+                  onPressed: () {
+                    blocCount.dec();
+                  },
+                  icon: const Icon(Icons.remove)),
+            ],
+          ),
+          const SecondWidget(),
         ],
       ),
     );
   }
+}
+
+class SecondWidget extends StatelessWidget{
+  const SecondWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocBuilder<BlocCounter, int>(builder: (_, state) => Text('The value is $state'));
+  }
+
 }
 
 class BlocHome extends StatelessWidget {
@@ -55,7 +61,7 @@ class BlocHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => BlocCounter(9),
+      create: (context) => BlocCounter(3),
       child: const BlocPatternExample(),
     );
   }
