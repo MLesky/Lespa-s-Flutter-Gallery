@@ -41,6 +41,7 @@ void main() {
   runApp(const MyApp());
 }
 
+/// Using [MaterialApp.router] for the [GoRouter] package
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -58,6 +59,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/// The [routes] of type [GoRouter] has all it's [routes] wrap in a [ShellRoute]
+/// The [ShellRoute] is the [ScaffoldWithBottomNavBar] which is a [Scaffold] with a [BottomNavigationBar]
+/// All other widgets are descendants of the [ScaffoldWithBottomNavBar]
+/// There are three Top Level [routes]: [HomeScreen] (Widgets), [PackagesScreen] (Packages), and [AnimationScreen] (Animation)
 GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
   ShellRoute(
     routes: [
