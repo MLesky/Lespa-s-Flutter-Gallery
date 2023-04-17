@@ -23,6 +23,7 @@ import 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
 import 'package:my_flutter_gallery/pages/widgets/flutter_buttons.dart';
 import 'package:my_flutter_gallery/pages/widgets/flutter_tabs.dart';
 import 'package:my_flutter_gallery/pages/widgets/flutter_theme.dart';
+import 'package:my_flutter_gallery/pages/widgets/gesture_detector.dart';
 import 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/inherited_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
@@ -160,6 +161,7 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
             builder: (context, state) => InheritedWidgetExample(
                 child: const InheritedWidgetTestExample()),
           ),
+          GoRoute(path: 'gesture-detector', builder: (context, state) => const GestureDetectorExample()),
         ],
       ),
       GoRoute(

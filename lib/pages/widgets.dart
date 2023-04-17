@@ -58,6 +58,7 @@ List<Map<String, String>> displayExamples = [
 
 List<Map<String, String>> eventExamples = [
   {'title': 'Absorb Pointer', 'path': '/widgets/absorb-pointer'},
+  {'title': 'Gesture Detector', 'path': '/widgets/gesture-detector'},
 ];
 
 List<Map<String, String>> animatedExamples = [
