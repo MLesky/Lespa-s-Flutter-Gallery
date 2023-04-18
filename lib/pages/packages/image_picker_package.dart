@@ -32,7 +32,7 @@ class _ImagePickerExampleState extends State<ImagePickerExample> {
                   ))
               : CircleAvatar(
                   radius: 70, backgroundImage: FileImage(File('${image?.path}'))),
-          const SizedBox(
+           const SizedBox(
             height: 15,
           ),
           Row(
@@ -41,26 +41,26 @@ class _ImagePickerExampleState extends State<ImagePickerExample> {
               TextButton(
                 onPressed: () => pickImageFromCamera(),
                 child: Column(
-                  children: const [
+                  children:  [
                     Icon(
                       Icons.camera_alt_rounded,
-                      color: Colors.indigo,
+                      color: Theme.of(context).primaryColor,
                       size: 70,
                     ),
-                    Text('Camera'),
+                    const Text('Camera'),
                   ],
                 ),
               ),
               TextButton(
                 onPressed: () => pickImageFromGallery(),
                 child: Column(
-                  children: const [
+                  children:  [
                     Icon(
                       Icons.image,
-                      color: Colors.indigo,
+                      color: Theme.of(context).primaryColor,
                       size: 70,
                     ),
-                    Text('Gallery'),
+                    const Text('Gallery'),
                   ],
                 ),
               ),
@@ -78,26 +78,26 @@ class _ImagePickerExampleState extends State<ImagePickerExample> {
               TextButton(
                 onPressed: () => pickVideoFromCamera(),
                 child: Column(
-                  children: const [
+                  children:  [
                     Icon(
                       Icons.video_call,
-                      color: Colors.indigo,
+                      color: Theme.of(context).primaryColor,
                       size: 70,
                     ),
-                    Text('Capture'),
+                    const Text('Capture'),
                   ],
                 ),
               ),
               TextButton(
                 onPressed: () => pickVideoFromGallery(),
                 child: Column(
-                  children: const [
+                  children: [
                     Icon(
                       Icons.video_collection,
-                      color: Colors.indigo,
+                      color: Theme.of(context).primaryColor,
                       size: 70,
                     ),
-                    Text('Device'),
+                    const Text('Device'),
                   ],
                 ),
               ),

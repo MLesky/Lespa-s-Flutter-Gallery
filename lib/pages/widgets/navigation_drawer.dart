@@ -26,7 +26,7 @@ class _ScaffoldNavigationDrawerExampleState
       child: ListView(
         children: <Widget>[
           DrawerHeader(
-              decoration: const BoxDecoration(color: Colors.indigo),
+              decoration: BoxDecoration(color: Theme.of(context).primaryColor),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.end,

@@ -153,7 +153,7 @@ class _AlignWidgetExampleState extends State<AlignWidgetExample> {
                     child: Container(
                       width: 100,
                       height: 100,
-                      color: Colors.indigo,
+                      color: Theme.of(context).primaryColor,
                       child: Center(
                           child: Text(
                               "x: ${horizontalValue.toStringAsFixed(2)}\ny: ${verticalValue.toStringAsFixed(2)}",

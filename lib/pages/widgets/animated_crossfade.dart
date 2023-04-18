@@ -24,7 +24,7 @@ class _AnimatedCrossFadeExampleState extends State<AnimatedCrossFadeExample> {
           firstChild: Container(
             width: 200,
             height: 100,
-            color: Colors.indigo,
+            color: Theme.of(context).primaryColor,
             child: const Center(
               child: Text("Hello There",
                   style: TextStyle(color: Colors.white, fontSize: 16)),
@@ -37,9 +37,9 @@ class _AnimatedCrossFadeExampleState extends State<AnimatedCrossFadeExample> {
             ),
             width: 150,
             height: 150,
-            child: const Center(
+            child: Center(
               child: Text("Good Bye",
-                  style: TextStyle(color: Colors.indigo, fontSize: 16)),
+                  style: TextStyle(color: Theme.of(context).primaryColor, fontSize: 16)),
             ),
           ),
         ),

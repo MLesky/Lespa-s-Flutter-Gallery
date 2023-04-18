@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_flutter_gallery/pages/animation.dart';
+import 'package:my_flutter_gallery/pages/packages/flutter_pdfview.dart';
 import 'package:my_flutter_gallery/pages/packages/flutter_spinkit_package.dart';
 import 'package:my_flutter_gallery/pages/packages/image_picker_package.dart';
 import 'package:my_flutter_gallery/pages/packages/provider.dart';
 import 'package:my_flutter_gallery/pages/packages/provider_read_watch_select.dart';
+import 'package:my_flutter_gallery/pages/packages/synfusion_pdf_reader.dart';
+import 'package:my_flutter_gallery/pages/packages/theme_provider.dart';
 import 'package:my_flutter_gallery/pages/packages/video_player_package.dart';
 import 'package:my_flutter_gallery/pages/packages/youtube_player_iframe.dart';
 import 'package:my_flutter_gallery/pages/widgets.dart';
@@ -35,11 +38,16 @@ import 'package:my_flutter_gallery/pages/widgets/scaffold_snackbar.dart';
 import 'package:my_flutter_gallery/pages/widgets/stateful_builder.dart';
 import 'package:my_flutter_gallery/pages/widgets/table_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/wrap_widget.dart';
+import 'package:provider/provider.dart';
 
 import 'components/scaffold_with_bottom_nav_bar.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (BuildContext context) => ThemeProvider(),
+      child: const MyApp(),
+    )
+  );
 }
 
 /// Using [MaterialApp.router] for the [GoRouter] package
@@ -49,14 +57,13 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
+    return  Consumer<ThemeProvider>(
+        builder: (context, themeProvider, child) => MaterialApp.router(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.teal,
-      ),
+      theme: themeProvider.themeData,
       routerConfig: routes,
-    );
+    ));
   }
 }
 
@@ -161,7 +168,9 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
             builder: (context, state) => InheritedWidgetExample(
                 child: const InheritedWidgetTestExample()),
           ),
-          GoRoute(path: 'gesture-detector', builder: (context, state) => const GestureDetectorExample()),
+          GoRoute(
+              path: 'gesture-detector',
+              builder: (context, state) => const GestureDetectorExample()),
         ],
       ),
       GoRoute(
@@ -194,9 +203,22 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
                 path: 'provider',
                 builder: (context, state) => const ProviderScreenState(),
                 routes: [
-                  GoRoute(path: 'read-watch-select', builder: (context, state) => const ProviderReadWatchAndSelect())
-                ]
-                ),
+                  GoRoute(
+                      path: 'read-watch-select',
+                      builder: (context, state) =>
+                          const ProviderReadWatchAndSelect()),
+                  GoRoute(
+                      path: 'theme-provider',
+                      builder: (context, state) =>
+                          const ThemeProviderExample()),
+                ]),
+            GoRoute(
+                path: 'syncfusion-pdf-reader',
+                builder: (context, state) =>
+                    const SyncfusionPdfReaderExample()),
+            GoRoute(
+                path: 'flutter-pdf-view',
+                builder: (context, state) => const FlutterPdfViewExample()),
           ]),
       GoRoute(
           path: '/animations',

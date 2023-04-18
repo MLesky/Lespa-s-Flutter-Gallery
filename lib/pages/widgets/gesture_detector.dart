@@ -36,7 +36,6 @@ class _GestureDetectorExampleState extends State<GestureDetectorExample> {
                       if (selectedSeats.length >= 7){
                         ScaffoldMessenger.of(context).removeCurrentSnackBar();
                         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Sorry you can select only a maximum of 7 seats')));
-                        print('seat $index can\'t be selected');
                       }
                       else {
                         setState(() {
@@ -45,7 +44,6 @@ class _GestureDetectorExampleState extends State<GestureDetectorExample> {
                           selectedSeats.sort();
                           isSeatSelected[index-1] = true;
                         });
-                        print('seat $index selected');
                       }
                     }
                     else {
@@ -55,7 +53,6 @@ class _GestureDetectorExampleState extends State<GestureDetectorExample> {
                         selectedSeats.sort();
                         isSeatSelected[index-1] = false;
                       });
-                      print('seat $index unselected');
                     }
                   },
                   child: Stack(

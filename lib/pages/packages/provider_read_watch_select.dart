@@ -63,7 +63,6 @@ class ProviderRead extends StatelessWidget {
   Widget build(BuildContext context) {
   //  var myModel = context.read<MyModel>();
      MyModel myModel = Provider.of<MyModel>(context);
-     print('Provider Read Widget');
     return Padding(
       padding: const EdgeInsets.all(30.0),
       child: Center(
@@ -88,7 +87,6 @@ class ProviderWatch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var model = context.watch<MyModel>();
-    print('Provider Watch Widget');
     return Column(
       children: [
         const Text('Provider Watch'),
@@ -116,7 +114,6 @@ class ProviderSelected extends StatelessWidget {
   Widget build(BuildContext context) {
     String name = context.select<MyModel, String>((MyModel myModel) => myModel.name);
     int age = context.select<MyModel, int>((MyModel myModel) => myModel.number);
-    print('Provider Selected Widget');
     return Padding(
       padding: const EdgeInsets.all(30.0),
       child: Center(

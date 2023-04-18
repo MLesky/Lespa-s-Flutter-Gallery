@@ -8,6 +8,7 @@ AccordionSection buildAccordionSection(BuildContext context,
     {required String title, required List accordionItems}) {
   return AccordionSection(
       leftIcon: const Icon(Icons.play_arrow, color: Colors.white),
+      contentBackgroundColor: Theme.of(context).scaffoldBackgroundColor,
       header: Text(title,
           style: const TextStyle(
               color: Colors.white,
@@ -16,10 +17,8 @@ AccordionSection buildAccordionSection(BuildContext context,
       content: Column(
           children: accordionItems
               .map((accordionItem) => Card(
-              color: Colors.white70,
-              elevation: 2.0,
               child: ListTile(
-                title: Text(accordionItem['title'], style: const TextStyle(color: Colors.indigo),),
+                title: Text(accordionItem['title']),
                 onTap: () {
                   context.push(accordionItem['path']);
                 },

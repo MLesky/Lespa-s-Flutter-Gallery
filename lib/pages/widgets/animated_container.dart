@@ -19,7 +19,7 @@ class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
     Colors.yellow,
     Colors.green,
     Colors.blue,
-    Colors.indigo,
+    Colors.green.shade600,
     Colors.purple,
     Colors.pink,
     Colors.black,

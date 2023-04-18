@@ -274,7 +274,7 @@ class _ButtonWrapper extends StatelessWidget {
       height: 200,
       width: 150,
       decoration: BoxDecoration(
-        border: Border.all(width: 3, color: Colors.indigo),
+        border: Border.all(width: 3, color: Theme.of(context).primaryColor),
       ),
       child: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -285,8 +285,8 @@ class _ButtonWrapper extends StatelessWidget {
             Text(
               title,
               textAlign: TextAlign.center,
-              style: const TextStyle(
-                  color: Colors.indigo,
+              style: TextStyle(
+                  color: Theme.of(context).primaryColor,
                   fontSize: 14,
                   fontWeight: FontWeight.bold),
             ),

@@ -37,6 +37,8 @@ List<Map<String, String>> mediaExamples = [
   {'title': 'Video Player', 'path': '/packages/video-player'},
   {'title': 'Youtube Player Iframe', 'path': '/packages/youtube-player-iframe'},
   {'title': 'Image and Video Picker', 'path': '/packages/image-picker'},
+  {'title': 'Syncfusion PDF Viewer', 'path': '/packages/syncfusion-pdf-reader'},
+  {'title': 'Flutter PDF View', 'path': '/packages/flutter-pdf-view'},
 ];
 
 List<Map<String, String>> stateManagementExamples = [
@@ -45,4 +47,5 @@ List<Map<String, String>> stateManagementExamples = [
   {'title': 'Provider - Read', 'path': '/packages/provider/read-watch-select'},
   {'title': 'Stateful Builder', 'path': '/widgets/stateful-builder'},
   {'title': 'Inherited Widget', 'path': '/widgets/inherited-widget'},
+  {'title': 'Theme Provider', 'path': '/packages/provider/theme-provider'}
 ];

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class InheritedWidgetExample extends InheritedWidget {
   int counter = 0;
   InheritedWidgetExample({

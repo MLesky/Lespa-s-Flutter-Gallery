@@ -22,7 +22,6 @@ class _VideoPlayerExampleState extends State<VideoPlayerExample> {
     _assetController =
         VideoPlayerController.asset(widget.link) : _assetController =
         VideoPlayerController.file(File(widget.link));
-    ;
     _assetController.addListener(() {
       setState(() {});
     });
@@ -127,8 +126,8 @@ class _ControlsOverlay extends StatelessWidget {
                     controller,
                     allowScrubbing: true,
                     padding: const EdgeInsets.all(5),
-                    colors: const VideoProgressColors(
-                        playedColor: Colors.indigo,
+                    colors: VideoProgressColors(
+                        playedColor: Theme.of(context).primaryColor,
                         bufferedColor: Colors.white10,
                         backgroundColor: Colors.white),
                   )),

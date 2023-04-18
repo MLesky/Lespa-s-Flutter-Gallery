@@ -41,7 +41,7 @@ class _PageViewWidgetExampleState extends State<PageViewWidgetExample> {
         elevation: 5.0,
         onTap: updateIndex,
         unselectedItemColor: Colors.grey,
-        selectedItemColor: Colors.indigo,
+        selectedItemColor: Theme.of(context).primaryColor,
       ),
     );
   }
