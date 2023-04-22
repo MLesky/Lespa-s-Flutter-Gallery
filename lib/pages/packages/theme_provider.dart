@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeProvider extends ChangeNotifier {
   late ThemeData _theme;
@@ -71,12 +72,19 @@ class ThemeProvider extends ChangeNotifier {
       )
   );
 
-  ThemeProvider({bool isDark = false}) {
+  ThemeProvider({required bool isDark}) {
     _theme = isDark ? dark : light;
   }
 
-  void swapTheme() {
-    _theme = _theme == dark ? light : dark;
+  Future<void> swapTheme() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    if (_theme == dark) {
+      _theme = light;
+      prefs.setBool('isDarkTheme', false);
+    } else {
+      _theme = dark;
+      prefs.setBool('isDarkTheme', true);
+    }
     notifyListeners();
   }
 

@@ -39,12 +39,15 @@ import 'package:my_flutter_gallery/pages/widgets/stateful_builder.dart';
 import 'package:my_flutter_gallery/pages/widgets/table_widget.dart';
 import 'package:my_flutter_gallery/pages/widgets/wrap_widget.dart';
 import 'package:provider/provider.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'components/scaffold_with_bottom_nav_bar.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  SharedPreferences prefs = await SharedPreferences.getInstance();
   runApp(ChangeNotifierProvider(
-      create: (BuildContext context) => ThemeProvider(),
+      create: (BuildContext context) => ThemeProvider(isDark: prefs.getBool('isDarkTheme') ?? false),
       child: const MyApp(),
     )
   );
