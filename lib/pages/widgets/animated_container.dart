@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class AnimatedContainerExample extends StatefulWidget {
@@ -20,7 +19,7 @@ class _AnimatedContainerExampleState extends State<AnimatedContainerExample> {
     Colors.yellow,
     Colors.green,
     Colors.blue,
-    Colors.indigo,
+    Colors.green.shade600,
     Colors.purple,
     Colors.pink,
     Colors.black,

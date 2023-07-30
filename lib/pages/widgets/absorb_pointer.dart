@@ -51,7 +51,7 @@ class _AbsorbPointerExampleState extends State<AbsorbPointerExample> {
                   ),
                   const Text('List', textAlign: TextAlign.center,),
                   for (int i = 1; i <= 10; i++) Container(
-                    color: Colors.indigo,
+                    color: Theme.of(context).primaryColor,
                     width: 70,
                     height: 70,
                     margin: const EdgeInsets.symmetric(vertical: 10.0),

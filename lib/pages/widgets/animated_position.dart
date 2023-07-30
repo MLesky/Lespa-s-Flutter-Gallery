@@ -28,7 +28,7 @@ class _AnimatedPositionedExampleState extends State<AnimatedPositionedExample> {
                     width: 300,
                     height: 300,
                     child: Container(
-                      color: Colors.indigo,
+                      color: Theme.of(context).primaryColor,
                       child: const Center(
                         child: Text("Animated Position",
                             style:
@@ -46,8 +46,8 @@ class _AnimatedPositionedExampleState extends State<AnimatedPositionedExample> {
                       color: Colors.yellow,
                       child: Center(
                         child: Text("X: ${(horizontalValue + 80).toStringAsFixed(2)} \nY: ${(verticalValue + 25).toStringAsFixed(2)}",
-                            style: const TextStyle(
-                                color: Colors.indigo, fontSize: 14.0)),
+                            style: TextStyle(
+                                color: Theme.of(context).primaryColor, fontSize: 14.0)),
                       ),
                     ),
                   ),

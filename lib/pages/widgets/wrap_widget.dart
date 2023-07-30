@@ -11,8 +11,8 @@ class WrapWidgetExample extends StatefulWidget {
 
 class _WrapWidgetExampleState extends State<WrapWidgetExample> {
 
-  Color horizontalWrapButton = Colors.indigo;
-  Color verticalWrapButton = Colors.indigo.shade200;
+  Color horizontalWrapButton = Colors.green.shade600;
+  Color verticalWrapButton = Colors.green.shade200;
   Axis wrapDirection = Axis.horizontal;
 
   @override
@@ -27,8 +27,8 @@ class _WrapWidgetExampleState extends State<WrapWidgetExample> {
               ElevatedButton.icon(
                   onPressed: () {
                     setState(() {
-                      horizontalWrapButton = Colors.indigo;
-                      verticalWrapButton = Colors.indigo.shade100;
+                      horizontalWrapButton = Theme.of(context).primaryColor;
+                      verticalWrapButton = Theme.of(context).primaryColor;
                       wrapDirection = Axis.horizontal;
                     });
                   },
@@ -41,8 +41,8 @@ class _WrapWidgetExampleState extends State<WrapWidgetExample> {
               ElevatedButton.icon(
                   onPressed: () {
                     setState(() {
-                      horizontalWrapButton = Colors.indigo.shade100;
-                      verticalWrapButton = Colors.indigo;
+                      horizontalWrapButton = Colors.green.shade200;
+                      verticalWrapButton = Theme.of(context).primaryColor;
                       wrapDirection = Axis.vertical;
                     });
                   },
@@ -60,7 +60,7 @@ class _WrapWidgetExampleState extends State<WrapWidgetExample> {
               spacing: 15.0,
               runSpacing: 15.0,
               children: [
-                for(int i = 1; i < 12; i++) Container(color: Colors.indigo, width: 90, height: 90, child: Center(child: Text("$i", textScaleFactor: 2.0, style: const TextStyle(color: Colors.white))))
+                for(int i = 1; i < 12; i++) Container(color: Theme.of(context).primaryColor, width: 90, height: 90, child: Center(child: Text("$i", textScaleFactor: 2.0, style: const TextStyle(color: Colors.white))))
               ],
             ),
           ),

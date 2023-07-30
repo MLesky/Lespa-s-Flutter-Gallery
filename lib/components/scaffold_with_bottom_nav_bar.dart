@@ -1,6 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:my_flutter_gallery/pages/animation.dart';
+import 'package:my_flutter_gallery/pages/packages.dart';
+import 'package:my_flutter_gallery/pages/packages/theme_provider.dart';
+import 'package:my_flutter_gallery/pages/widgets.dart';
+import 'package:provider/provider.dart';
 
+/// [ScaffoldWithBottomNavBar] is a [StatefulWidget]
+/// It has a [Scaffold] with a [BottomNavigationBar] which has 3 [BottomNavigationBarItem]s for 3 Screens:
+/// [HomeScreen] (Widgets), [PackagesScreen] (Packages), and [AnimationScreen] (Animation)
+/// All other widgets/pages are descendants of one of these 3
 class ScaffoldWithBottomNavBar extends StatefulWidget {
   const ScaffoldWithBottomNavBar({super.key, required this.child});
   final Widget child;
@@ -14,7 +23,7 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
 
   final List namedLocations = ['widget', 'package', 'animation'];
 
-  void trying(BuildContext context, int index) {
+  void goTo(BuildContext context, int index) {
     context.goNamed(namedLocations[index]);
     setState(() {
       currentIndex = index;
@@ -27,6 +36,7 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Lespa\'s Flutter Gallery - ${location.substring(location.lastIndexOf('/')+1).toUpperCase()}', textScaleFactor: 0.8,),
+        actions: [IconButton(onPressed: (){Provider.of<ThemeProvider>(context, listen: false).swapTheme();}, icon: Provider.of<ThemeProvider>(context).isDarkMode ? const Icon(Icons.dark_mode) : const Icon(Icons.brightness_4_rounded))],
       ),
       body: widget.child,
       bottomNavigationBar: BottomNavigationBar(
@@ -48,13 +58,8 @@ class _ScaffoldWithBottomNavBarState extends State<ScaffoldWithBottomNavBar> {
             activeIcon: Icon(Icons.animation),
           ),
         ],
-        onTap: (index) => trying(context, index),
+        onTap: (index) => goTo(context, index),
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.indigo,
-        selectedItemColor: Colors.yellow,
-        unselectedItemColor: Colors.white,
-        selectedFontSize: 15.0,
-        showUnselectedLabels: false,
       ),
     );
   }
