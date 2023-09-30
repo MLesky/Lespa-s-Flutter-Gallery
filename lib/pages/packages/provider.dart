@@ -7,7 +7,7 @@ class Drink {
   Drink(this.name, this.selected);
 }
 
-class DrinksProvider extends ChangeNotifier {
+class _DrinksProvider extends ChangeNotifier {
   int _quantity = 0;
   String title = 'Drink Menu';
 
@@ -56,10 +56,10 @@ class ProviderScreenState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (_) => DrinksProvider(),
+      create: (_) => _DrinksProvider(),
       child: DefaultTabController(
         length: 2,
-        child: Consumer<DrinksProvider>(
+        child: Consumer<_DrinksProvider>(
           builder: (_, drinksProvider, child) => Scaffold(
             appBar: AppBar(
               title: Text(drinksProvider.title),
@@ -67,9 +67,9 @@ class ProviderScreenState extends StatelessWidget {
                 drinksProvider.updateTitle(index);
               },
                   tabs: [
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text('Menu'),
                     SizedBox(width: 15,),
                     Icon(Icons.menu),
@@ -107,7 +107,7 @@ class DrinkOrders extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       child: Container(
         padding: const EdgeInsets.all(8),
-        child: Consumer<DrinksProvider>(
+        child: Consumer<_DrinksProvider>(
           builder: (context, drinksProvider, child) => Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -164,7 +164,7 @@ class OrdersList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<DrinksProvider>(
+    return Consumer<_DrinksProvider>(
       builder: (context, drinksProvider, child) => Column(
         children: [
           for (int index = 0;

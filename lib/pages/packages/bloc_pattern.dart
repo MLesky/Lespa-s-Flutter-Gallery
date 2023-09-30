@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class BlocCounter extends Cubit<int> {
-  BlocCounter(super.initialState);
+class _BlocCounter extends Cubit<int> {
+  _BlocCounter(super.initialState);
 
   int get initialState => 0;
 
@@ -15,7 +15,7 @@ class BlocPatternExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    BlocCounter blocCount = BlocProvider.of<BlocCounter>(context);
+    _BlocCounter blocCount = BlocProvider.of<_BlocCounter>(context);
     return Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -28,7 +28,7 @@ class BlocPatternExample extends StatelessWidget {
                     blocCount.inc();
                   },
                   icon: const Icon(Icons.add)),
-              BlocBuilder<BlocCounter, int>(builder: (context, state) {
+              BlocBuilder<_BlocCounter, int>(builder: (context, state) {
                 return Text('$state');
               }),
               IconButton(
@@ -38,19 +38,19 @@ class BlocPatternExample extends StatelessWidget {
                   icon: const Icon(Icons.remove)),
             ],
           ),
-          const SecondWidget(),
+          const _SecondWidget(),
         ],
       ),
     );
   }
 }
 
-class SecondWidget extends StatelessWidget{
-  const SecondWidget({super.key});
+class _SecondWidget extends StatelessWidget{
+  const _SecondWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<BlocCounter, int>(builder: (_, state) => Text('The value is $state'));
+    return BlocBuilder<_BlocCounter, int>(builder: (_, state) => Text('The value is $state'));
   }
 
 }
@@ -61,7 +61,7 @@ class BlocHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => BlocCounter(3),
+      create: (context) => _BlocCounter(3),
       child: const BlocPatternExample(),
     );
   }

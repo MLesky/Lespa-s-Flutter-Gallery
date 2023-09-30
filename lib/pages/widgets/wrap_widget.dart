@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-List<int> data = [for (int i = 1; i <= 31; i++) i];
-
 class WrapWidgetExample extends StatefulWidget {
   const WrapWidgetExample({super.key});
 

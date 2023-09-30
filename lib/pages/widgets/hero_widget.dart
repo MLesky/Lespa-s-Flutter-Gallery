@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-String capText = 'The hero widget Animates this image when changing screens. Other widgets (Not only images) can be used as heroes';
+String _capText = 'The hero widget Animates this image when changing screens. Other widgets (Not only images) can be used as heroes';
 
 class HeroWidgetExample extends StatelessWidget {
   const HeroWidgetExample({super.key});
@@ -19,7 +19,7 @@ class HeroWidgetExample extends StatelessWidget {
               child: Hero(tag: 'pic1',
               child: Image.asset('assets/images/pic1.jpg')),
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HeroWidgetScreen(image: 'assets/images/pic1.jpg', caption: capText, tag: 'pic1')));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HeroWidgetScreen(image: 'assets/images/pic1.jpg', caption: _capText, tag: 'pic1')));
               },
             ),
           ),
@@ -31,7 +31,7 @@ class HeroWidgetExample extends StatelessWidget {
               child: Hero(tag: 'mypic',
               child: Image.asset('assets/images/mypic.jpg')),
               onPressed: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HeroWidgetScreen(image: 'assets/images/mypic.jpg', caption: capText, tag: 'mypic')));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => HeroWidgetScreen(image: 'assets/images/mypic.jpg', caption: _capText, tag: 'mypic')));
               },
             ),
           ),

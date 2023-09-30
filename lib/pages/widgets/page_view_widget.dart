@@ -16,13 +16,13 @@ class _PageViewWidgetExampleState extends State<PageViewWidgetExample> {
     PageView(
       controller: PageController(initialPage: 0),
       scrollDirection: Axis.vertical,
-      children: screens,
+      children: _screens,
     ),
 
     PageView(
       controller: PageController(initialPage: 0),
       scrollDirection: Axis.horizontal,
-      children: screens,
+      children: _screens,
     ),
   ];
 
@@ -47,7 +47,7 @@ class _PageViewWidgetExampleState extends State<PageViewWidgetExample> {
   }
 }
 
-List<Widget> screens = const [
+List<Widget> _screens = const [
     Center(child: Text("Page 1")),
     Center(child: Text("Page 2")),
     Center(child: Text("Page 3")),

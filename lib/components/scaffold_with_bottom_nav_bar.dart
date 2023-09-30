@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:my_flutter_gallery/pages/animation.dart';
 import 'package:my_flutter_gallery/pages/packages.dart';
-import 'package:my_flutter_gallery/pages/packages/theme_provider.dart';
 import 'package:my_flutter_gallery/pages/widgets.dart';
 import 'package:provider/provider.dart';
 

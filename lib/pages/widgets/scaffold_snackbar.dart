@@ -12,20 +12,10 @@ class ScaffoldSnackBarExample extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                const Text('This is a Snack Bar'),
-                TextButton.icon(
-                  onPressed: () {
-                    ScaffoldMessenger.of(context).removeCurrentSnackBar();
-                  },
-                  icon: const Icon(Icons.close),
-                  label: const Text('close'),
-                )
-              ],
-            )));
+            ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                    showCloseIcon: true,
+                    content: Text('This is a snack-bar')));
           },
           child: const Text('Click Me'),
         ),

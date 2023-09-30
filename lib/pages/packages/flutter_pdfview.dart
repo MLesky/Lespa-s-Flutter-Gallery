@@ -18,19 +18,27 @@ class _FlutterPdfViewExampleState extends State<FlutterPdfViewExample> {
   Widget build(BuildContext context) {
     return PDFView(
       filePath: 'assets/dart.pdf',
-      defaultPage: 1,
+      defaultPage: 0,
       enableSwipe: true,
       swipeHorizontal: true,
       autoSpacing: false,
       pageFling: false,
       onRender: (pages) {
+        print('Render $pages');
         setState(() {
           pages = pages;
         });
       },
       onViewCreated: (PDFViewController pdfViewController) {
+        print('created view');
         _controller.complete(pdfViewController);
       },
+        onError: (error){
+          print('Failed to load $error');
+        },
+        onPageError: (page, error){
+          print('Failed to load Page $page with error $error');
+        }
     );
   }
 }

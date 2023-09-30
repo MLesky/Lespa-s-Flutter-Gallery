@@ -29,7 +29,7 @@ class InheritedWidgetTestExample extends StatelessWidget {
     return StatefulBuilder(builder:
         (BuildContext context, void Function(void Function()) setState) {
       return Scaffold(
-        body: screens[curIndex],
+        body: _screens[curIndex],
         bottomNavigationBar: BottomNavigationBar(
           items: const [
             BottomNavigationBarItem(icon: Icon(Icons.add), label: 'Increase'),
@@ -48,14 +48,14 @@ class InheritedWidgetTestExample extends StatelessWidget {
   }
 }
 
-List screens = const <Widget>[
-  Screen1(),
-  Screen2(),
-  Screen3(),
+List _screens = const <Widget>[
+  _Screen1(),
+  _Screen2(),
+  _Screen3(),
 ];
 
-class Screen1 extends StatelessWidget {
-  const Screen1({Key? key}) : super(key: key);
+class _Screen1 extends StatelessWidget {
+  const _Screen1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -82,8 +82,8 @@ class Screen1 extends StatelessWidget {
   }
 }
 
-class Screen2 extends StatelessWidget {
-  const Screen2({Key? key}) : super(key: key);
+class _Screen2 extends StatelessWidget {
+  const _Screen2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -110,8 +110,8 @@ class Screen2 extends StatelessWidget {
   }
 }
 
-class Screen3 extends StatelessWidget {
-  const Screen3({Key? key}) : super(key: key);
+class _Screen3 extends StatelessWidget {
+  const _Screen3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,32 @@ import 'package:accordion/accordion.dart';
 import 'package:flutter/material.dart';
 import '../components/widget_builds.dart';
 
+export 'package:my_flutter_gallery/pages/widgets/about_dialog.dart';
+export 'package:my_flutter_gallery/pages/widgets/absorb_pointer.dart';
+export 'package:my_flutter_gallery/pages/widgets/alert_dialog.dart';
+export 'package:my_flutter_gallery/pages/widgets/align_widget.dart';
+export 'package:my_flutter_gallery/pages/widgets/animated_container.dart';
+export 'package:my_flutter_gallery/pages/widgets/animated_crossfade.dart';
+export 'package:my_flutter_gallery/pages/widgets/animated_opacity.dart';
+export 'package:my_flutter_gallery/pages/widgets/animated_padding.dart';
+export 'package:my_flutter_gallery/pages/widgets/animated_position.dart';
+export 'package:my_flutter_gallery/pages/widgets/fade_in_image.dart';
+export 'package:my_flutter_gallery/pages/widgets/flutter_buttons.dart';
+export 'package:my_flutter_gallery/pages/widgets/flutter_tabs.dart';
+export 'package:my_flutter_gallery/pages/widgets/flutter_theme.dart';
+export 'package:my_flutter_gallery/pages/widgets/gesture_detector.dart';
+export 'package:my_flutter_gallery/pages/widgets/hero_widget.dart';
+export 'package:my_flutter_gallery/pages/widgets/inherited_widget.dart';
+export 'package:my_flutter_gallery/pages/widgets/layout_builder.dart';
+export 'package:my_flutter_gallery/pages/widgets/navigation_drawer.dart';
+export 'package:my_flutter_gallery/pages/widgets/opacity_widget.dart';
+export 'package:my_flutter_gallery/pages/widgets/page_view_widget.dart';
+export 'package:my_flutter_gallery/pages/widgets/scaffold_appbar.dart';
+export 'package:my_flutter_gallery/pages/widgets/scaffold_snackbar.dart';
+export 'package:my_flutter_gallery/pages/widgets/stateful_builder.dart';
+export 'package:my_flutter_gallery/pages/widgets/table_widget.dart';
+export 'package:my_flutter_gallery/pages/widgets/wrap_widget.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
