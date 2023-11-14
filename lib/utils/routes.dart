@@ -111,6 +111,9 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
           GoRoute(
               path: 'gesture-detector',
               builder: (context, state) => const GestureDetectorExample()),
+          GoRoute(
+              path: 'flutter-inputs',
+              builder: (context, state) => FlutterInputFields()),
         ],
       ),
       GoRoute(
