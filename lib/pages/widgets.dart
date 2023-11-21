@@ -28,6 +28,7 @@ export 'package:my_flutter_gallery/pages/widgets/stateful_builder.dart';
 export 'package:my_flutter_gallery/pages/widgets/table_widget.dart';
 export 'package:my_flutter_gallery/pages/widgets/wrap_widget.dart';
 export 'package:my_flutter_gallery/pages/widgets/flutter_inputs.dart';
+export 'package:my_flutter_gallery/pages/widgets/flutter_pickers.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -62,7 +63,8 @@ class _HomeScreenState extends State<HomeScreen> {
 
 List<Map<String, String>> basicExamples = [
   {'title': 'Flutter Buttons', 'path': '/widgets/flutter-buttons'},
-  {'title': 'Flutter Input', 'path': '/widgets/flutter-inputs'},
+  {'title': 'Flutter Inputs', 'path': '/widgets/flutter-inputs'},
+  {'title': 'Flutter Pickers', 'path': '/widgets/flutter-pickers'},
 ];
 
 List<Map<String, String>> mediaExamples = [

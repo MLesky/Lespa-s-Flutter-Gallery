@@ -476,31 +476,31 @@ class _FlutterInputFieldsState extends State<FlutterInputFields> {
       helperText: isRequired ? 'required' : null,
     );
   }
-}
 
-Widget buildSection({String? title, required List<Widget> children}) {
-  return Padding(
-    padding: const EdgeInsets.all(10),
-    child: Card(
-      child: Padding(
-        padding: const EdgeInsets.all(15.0),
-        child: Stack(
-          alignment: Alignment.topLeft,
-          children: [
-            Padding(
-              padding:
-              const EdgeInsets.symmetric(horizontal: 5.0, vertical: 20.0),
-              child: Column(
-                children: children,
+  Widget buildSection({String? title, required List<Widget> children}) {
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Stack(
+            alignment: Alignment.topLeft,
+            children: [
+              Padding(
+                padding:
+                const EdgeInsets.symmetric(horizontal: 5.0, vertical: 20.0),
+                child: Column(
+                  children: children,
+                ),
               ),
-            ),
-            Text(
-              title ?? '',
-              textScaleFactor: 1.3,
-            ),
-          ],
+              Text(
+                title ?? '',
+                textScaleFactor: 1.3,
+              ),
+            ],
+          ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }
