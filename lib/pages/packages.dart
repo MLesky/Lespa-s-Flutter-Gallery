@@ -12,6 +12,7 @@ export 'package:my_flutter_gallery/pages/packages/synfusion_pdf_reader.dart';
 export 'package:my_flutter_gallery/pages/packages/theme_provider.dart';
 export 'package:my_flutter_gallery/pages/packages/video_player_package.dart';
 export 'package:my_flutter_gallery/pages/packages/youtube_player_iframe.dart';
+export 'package:my_flutter_gallery/pages/packages/mongo_db.dart';
 
 class PackagesScreen extends StatefulWidget {
   const PackagesScreen({super.key});
@@ -28,6 +29,7 @@ class _PackagesScreenState extends State<PackagesScreen> {
       buildAccordionSection(context, title: "Media", accordionItems: mediaExamples),
       buildAccordionSection(context, title: 'Animated Packages', accordionItems: animatedExamples),
       buildAccordionSection(context, title: 'State Management', accordionItems: stateManagementExamples),
+      buildAccordionSection(context, title: 'Databases', accordionItems: databaseExamples),
     ];
 
     return Accordion(
@@ -58,4 +60,8 @@ List<Map<String, String>> stateManagementExamples = [
   {'title': 'Stateful Builder', 'path': '/widgets/stateful-builder'},
   {'title': 'Inherited Widget', 'path': '/widgets/inherited-widget'},
   {'title': 'Theme Provider', 'path': '/packages/provider/theme-provider'}
+];
+
+List<Map<String, String>> databaseExamples = [
+  {'title': 'Mongo DB', 'path': '/packages/mongo-db'},
 ];

@@ -165,6 +165,9 @@ GoRouter routes = GoRouter(initialLocation: '/widgets', routes: [
             GoRoute(
                 path: 'flutter-pdf-view',
                 builder: (context, state) => const FlutterPdfViewExample()),
+            GoRoute(
+                path: 'mongo-db',
+                builder: (context, state) => const MongoDbView()),
           ]),
       GoRoute(
           path: '/animations',
